@@ -19,20 +19,25 @@ requirements:
     - pip
     - python {{ python_min }}
     - setuptools
+    - wheel
   run:
-    - python >={{ python_min }}
-    - pyfd
-    - pycm
     - future
     - numpy
+    - pycm
+    - pyfd
+    - python >={{ python_min }}
     - pytz
     - tzlocal <=2.1
 
 test:
   requires:
+    - pip
     - python {{ python_min }}
   imports:
     - virgotools
+  commands:
+    - pip check
+    - pip show pythonvirgotools
 
 about:
   home: "https://git.ligo.org/virgo/virgoapp/PythonVirgoTools"
